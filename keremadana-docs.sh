@@ -1,9 +1,9 @@
 #!/bin/bash
 
 # Set variables
-name=personal-docs
-author=aronmal
-github=aronmal/personal-docs
+name=keremadana-docs
+author=keremadana
+github=keremadana/docs
 version=$(curl -s https://api.github.com/repos/${github}/releases/latest | grep 'tag_name' | cut -d\" -f4)
 packageVER=${version}
 packageName=${name}-package-${packageVER}

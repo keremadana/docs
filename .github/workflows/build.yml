@@ -45,9 +45,9 @@ jobs:
       run: |
         echo "# ${{env.VERSION}}" >> docs/version.md
         mkdocs build --verbose --clean
-        mv site personal-docs
-        zip -r personal-docs-package-${{env.VERSION}}.zip personal-docs
-        MD5=`md5sum personal-docs-package-${{env.VERSION}}.zip`
+        mv site keremadana-docs
+        zip -r keremadana-docs-package-${{env.VERSION}}.zip keremadana-docs
+        MD5=`md5sum keremadana-docs-package-${{env.VERSION}}.zip`
         echo "MD5: $MD5"
         echo "Version ${{env.VERSION}}" >> release_info
         echo "" >> release_info
@@ -56,8 +56,8 @@ jobs:
     - name: Upload Artifact ☁️
       uses: actions/upload-artifact@v2
       with:
-        name: personal-docs-package-${{env.VERSION}}.zip
-        path: personal-docs-package-*
+        name: keremadana-docs-package-${{env.VERSION}}.zip
+        path: keremadana-docs-package-*
 
     - name: Set Release ENV Variables On Manual
       if: github.event_name == 'workflow_dispatch'
@@ -79,7 +79,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         tag_name:  ${{env.RELEASE_TAG_NAME}}
-        release_name: Personal Docs Package ${{env.RELEASE_TAG_NAME}}
+        release_name: Kerem Docs Package ${{env.RELEASE_TAG_NAME}}
         body_path: release_info
         draft: true
         prerelease: false
@@ -92,6 +92,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
           upload_url: ${{ steps.create_release.outputs.upload_url }} 
-          asset_path: personal-docs-package-${{env.VERSION}}.zip
-          asset_name: personal-docs-package-${{env.VERSION}}.zip
+          asset_path: keremadana-docs-package-${{env.VERSION}}.zip
+          asset_name: keremadana-docs-package-${{env.VERSION}}.zip
           asset_content_type: application/octet-stream
