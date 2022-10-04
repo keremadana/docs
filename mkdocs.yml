@@ -1,10 +1,10 @@
 site_name: 'Personal documentation'
 site_url: https://docs.mal-noh.de/
-repo_name: aronmal/personal-docs
-repo_url: https://github.com/aronmal/personal-docs
+repo_name: keremadana/docs
+repo_url: https://github.com/keremadana/docs
 edit_uri: ./edit/main/docs/
-site_author: 'aronmal'
-copyright: "Copyright &copy; 2022 aronmal"
+site_author: 'keremadana'
+copyright: "Copyright &copy; 2022 keremadana"
 
 theme:
   name: material
@@ -57,9 +57,9 @@ extra:
     - icon: fontawesome/solid/globe
       link: https://mal-noh.de
     - icon: fontawesome/brands/github
-      link: https://github.com/aronmal
+      link: https://github.com/keremadana
     - icon: fontawesome/solid/code
-      link: https://github.com/aronmal/personal-docs
+      link: https://github.com/keremadana/docs
   theme:
     palette:
       primary: indigo

@@ -38,7 +38,7 @@ server {
         listen 443 ssl http2;
         listen [::]:443 ssl http2;
 
-        root /config/www/personal-docs;
+        root /config/www/docs;
 
         server_name docs.mal-noh.de;
 
