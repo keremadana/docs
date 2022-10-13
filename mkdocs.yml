@@ -44,6 +44,8 @@ nav:
   - 'First Chapter':
     - 'Page One': 'page-one.md'
     - 'Page Two': 'page-two.md'
+  - 'React':
+    - 'Training': 'react training.md'
   - 'Version': 'version.md'
 
 plugins:
