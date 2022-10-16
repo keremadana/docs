@@ -79,6 +79,6 @@ jobs:
         name: Kerem Docs Package ${{env.RELEASE_TAG_NAME}}
         body_path: release_info
         draft: false
-        prerelease: true
+        prerelease: false
         # body_path: ${{ github.workspace }}-CHANGELOG.txt
         files: keremadana-docs-package-${{env.VERSION}}.zip
