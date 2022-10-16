@@ -2,7 +2,7 @@ name: Build and create release
 
 on:
   push:
-    tags: [ '20[0-9]+.[0-9]+.[0-9]' ]
+    tags: [ '20[0-9]+.[0-9]+.[0-9]+' ]
   workflow_dispatch:
     inputs:
       create_release:
@@ -69,7 +69,7 @@ jobs:
       if: github.event_name != 'workflow_dispatch'
       run: |
           echo "DO_RELEASE=T" >> $GITHUB_ENV
-          echo "RELEASE_TAG_NAME=${{github.GITHUB_REF}}" >> $GITHUB_ENV
+          echo "RELEASE_TAG_NAME=${{GITHUB_REF}}" >> $GITHUB_ENV
           
     - name: Create Manual Release 📅
       id: create_release
