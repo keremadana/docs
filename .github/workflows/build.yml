@@ -69,7 +69,7 @@ jobs:
       if: github.event_name != 'workflow_dispatch'
       run: |
           echo "DO_RELEASE=T" >> $GITHUB_ENV
-          echo "RELEASE_TAG_NAME=${GITHUB_REF}" >> $GITHUB_ENV
+          echo "RELEASE_TAG_NAME=${GITHUB_REF_NAME}" >> $GITHUB_ENV
           
     - name: Create Manual Release 📅
       uses: softprops/action-gh-release@v1
