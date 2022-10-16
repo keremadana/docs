@@ -18,7 +18,7 @@ jobs:
         shell: bash
     steps:
     - name: Checkout 📥
-      uses: actions/checkout@v3.0.2
+      uses: actions/checkout@v3.1.0
 
     - name: Get current date (version) 🗓️
       id: date
@@ -76,9 +76,9 @@ jobs:
       if: env.DO_RELEASE == 'T'
       with:
         tag_name:  ${{env.RELEASE_TAG_NAME}}
-        release_name: Kerem Docs Package ${{env.RELEASE_TAG_NAME}}
+        name: Kerem Docs Package ${{env.RELEASE_TAG_NAME}}
         body_path: release_info
-        draft: true
-        prerelease: false
+        draft: false
+        prerelease: true
         # body_path: ${{ github.workspace }}-CHANGELOG.txt
         files: keremadana-docs-package-${{env.VERSION}}.zip
